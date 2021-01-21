@@ -13,12 +13,17 @@ let milDec = document.getElementById('milDec');
 let milUni = document.getElementById('milUni');
 let splits = document.getElementById('splits');
 
+
 function printTime() {
-  // ... your code goes here
-}
+ twoDigitsNumber.forEach(number => {
+   
+});
+
+};
 
 function printMinutes() {
-  // ... your code goes here
+  minDec.innerHTML = chronometer.getMinutes();
+  console.log(minDec.innerHTML)
 }
 
 function printSeconds() {
@@ -56,10 +61,35 @@ function setResetBtn() {
 
 // Start/Stop Button
 btnLeft.addEventListener('click', () => {
-  // ... your code goes here
+
+  btnLeft.classList.toggle("stop");
+
+  if (btnLeft.innerText == "START"){
+  btnLeft.innerText = "STOP";
+  chronometer.startClick();
+  
+  }
+  else{
+    btnLeft.innerText = "START";
+    chronometer.stopClick();
+  }
+
+  
+
+  console.log("Start/Stop")
 });
 
 // Reset/Split Button
 btnRight.addEventListener('click', () => {
-  // ... your code goes here
+  btnRight.classList.toggle("split");
+
+  if (btnRight.innerText == "RESET"){
+    btnRight.innerText = "SPLIT";
+  }
+  else{
+    btnRight.innerText = "RESET";
+  }
+
+
+  console.log("Reset/Split")
 });
