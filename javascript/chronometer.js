@@ -20,12 +20,14 @@ class Chronometer {
   }
 
   twoDigitsNumber(number) {
-    if (number < 10){
-      return `0${number}`;
-    }  
-    else{
-      return `${number}`;
-    }
+    // if (number < 10){
+    //   return `0${number}`;
+    // }  
+    // else{
+    //   return `${number}`;
+    // }
+    let num = "0" + number;
+    return num.slice(-2);
   }
 
   stopClick() {
@@ -35,15 +37,16 @@ class Chronometer {
   resetClick() {
   this.currentTime = 0;
   }
+  
   splitClick() {
     
     let min = this.getMinutes();
     let sec = this.getSeconds();
 
-    min = this.twoDigitsNumber(min);
-    sec = this.twoDigitsNumber(sec);
+    let twoDigitMin = this.twoDigitsNumber(min);
+    let twoDigitSec = this.twoDigitsNumber(sec);
 
-  return `${min}:${sec}`;  
+  return `${twoDigitMin}:${twoDigitSec}`;  
   }
 }
 
